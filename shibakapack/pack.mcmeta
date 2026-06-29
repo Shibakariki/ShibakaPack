@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "description": "Shibaka's Pack",
+    "min_format": [
+      100,
+      0
+    ],
+    "max_format": [
+      150,
+      0
+    ]
+  }
+}

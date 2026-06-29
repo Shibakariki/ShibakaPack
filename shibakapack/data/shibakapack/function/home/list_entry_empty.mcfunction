@@ -1,0 +1,1 @@
+$tellraw @s [{"text":"  > Slot $(slot) — empty","color":"gray","italic":true}]

@@ -1,0 +1,2 @@
+$data modify storage shibakapack:homes players.$(u1)_$(u2)_$(u3)_$(u4).homes.$(slot).name set value "$(name)"
+$tellraw @s [{"text":"[Home] ","color":"green"},{"text":"Slot $(slot) renamed to $(name) !","color":"white"}]

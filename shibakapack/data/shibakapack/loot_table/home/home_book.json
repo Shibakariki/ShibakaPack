@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:written_book_content": {
+                  "title": "Homes",
+                  "author": "ShibakaPack",
+                  "pages": [
+                    {
+                      "raw": [
+                        {"text": "        Homes    ", "bold": true, "color": "gold"},
+                        {"text": "\n"},
+                        {"text": "\n"},
+                        {"text": "   [Main Home] ", "color": "green", "click_event": {"action": "run_command", "command": "/trigger homeTpMain"}},
+                        {"text":"[+]", "color": "green", "click_event": {"action": "run_command", "command": "/trigger homeSetMain"}},
+                        {"text": "\n"},
+                        {"text": "\n"},
+                        {"text": "     [Homes] ", "color": "blue", "click_event": {"action": "run_command", "command": "/trigger homeList"}},
+                        {"text":"[+]", "color": "blue", "click_event": {"action": "run_command", "command": "/trigger homeOpenSetDialog"}},
+                        {"text": "\n"},
+                        {"text": "\n"},
+                        {"text": "   [Rename home]", "color": "dark_purple", "click_event": {"action": "run_command", "command": "/trigger homeOpenRenameDialog"}}
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

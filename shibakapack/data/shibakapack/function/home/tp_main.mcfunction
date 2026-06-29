@@ -1,0 +1,2 @@
+execute if data storage shibakapack:global_home home.x run function shibakapack:home/tp_main_exec with storage shibakapack:global_home home
+execute unless data storage shibakapack:global_home home.x run tellraw @s [{"text":"[HOME] ","color":"green"},{"text":"The main home is not set !","color":"red"}]

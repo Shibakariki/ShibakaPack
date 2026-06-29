@@ -1,0 +1,1 @@
+$tellraw @s [{"text":"  > $(name)","color":"aqua","click_event":{"action":"run_command","command":"/trigger homeTpIndex set $(slot)"},"hover_event":{"action":"show_text","value":"Go to $(name)"}},{"text": " [-]", "color":"red","click_event":{"action":"run_command","command":"/trigger homeDeleteIndex set $(slot)"},"hover_event":{"action":"show_text","value":"Delete $(name)"}}]

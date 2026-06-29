@@ -1,0 +1,1 @@
+dialog show @s shibakapack:home/set_home

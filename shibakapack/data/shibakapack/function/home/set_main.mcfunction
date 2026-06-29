@@ -1,0 +1,2 @@
+execute if entity @s[tag=op] run function shibakapack:home/save_main
+execute unless entity @s[tag=op] run tellraw @s [{"text":"[Home] ","color":"green"},{"text":" You do not have permission !","color":"red"}]

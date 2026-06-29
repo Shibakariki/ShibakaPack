@@ -1,0 +1,3 @@
+give @s paper[item_name="Rename",custom_data={home_rename:1b}]
+tellraw @s [{"text":"[Home] ","color":"green"},{"text":"Rename this paper on an anvil, then ","color":"white"},{"text":"[Confirm]","color":"aqua","click_event":{"action":"run_command","command":"/trigger homeRenameConfirm set 1"},"hover_event":{"action":"show_text","value":"Click once the paper is renamed in hand!"}}]
+scoreboard players set @s homeWaitingRename 1

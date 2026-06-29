@@ -1,0 +1,1 @@
+$scoreboard players display numberformat @s Infos fixed [{"text":"$(deaths) \u2620","color":"red"},{"text":" | ","color":"white"},{"text":"$(hours)h$(minutes)min","color":"green"}]

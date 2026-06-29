@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:confirmation",
+  "title": "Home Setup",
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "label": "Slot",
+      "key": "slot",
+      "options": [
+        {"id": "1", "display": "Slot 1"},
+        {"id": "2", "display": "Slot 2"},
+        {"id": "3", "display": "Slot 3"},
+        {"id": "4", "display": "Slot 4"},
+        {"id": "5", "display": "Slot 5"}
+      ]
+    }
+  ],
+  "yes": {
+    "label": "Create",
+    "action": {
+      "type": "minecraft:dynamic/run_command",
+      "template": "/trigger homeSetIndex set $(slot)"
+    }
+  },
+  "no": {
+    "label": "Cancel"
+  }
+}

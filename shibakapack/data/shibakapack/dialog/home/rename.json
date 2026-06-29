@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:confirmation",
+  "title": "Home Rename",
+  "body": [
+    {
+      "type": "minecraft:item",
+      "item": {
+        "id": "minecraft:paper"
+      },
+      "show_decorations": true
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "1. Choose the slot\n2. Click Continue\n3. Rename the paper on an anvil\n4. Type /trigger homeRenameConfirm set <slot>"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "label": "Slot to rename",
+      "key": "slot",
+      "options": [
+        {"id": "1", "display": "Slot 1"},
+        {"id": "2", "display": "Slot 2"},
+        {"id": "3", "display": "Slot 3"},
+        {"id": "4", "display": "Slot 4"},
+        {"id": "5", "display": "Slot 5"}
+      ]
+    }
+  ],
+  "yes": {
+    "label": "Continue",
+    "action": {
+      "type": "minecraft:dynamic/run_command",
+      "template": "/trigger homeOpenRenameGive set $(slot)"
+    }
+  },
+  "no": {"label": "Cancel"}
+}
