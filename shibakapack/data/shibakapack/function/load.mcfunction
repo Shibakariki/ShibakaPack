@@ -1,4 +1,10 @@
-# DeathCounter
+# Config
+scoreboard objectives add config dummy
+# Default values
+execute unless score #deathcounter config = #deathcounter config run scoreboard players set #deathcounter config 1
+execute unless score #homes config = #homes config run scoreboard players set #homes config 1
+
+# DeathCounter module
 scoreboard objectives add Infos dummy [{"text":"✎ Infos ✎","color":"gold","bold":true}]
 scoreboard objectives add DeathDetect deathCount
 
@@ -19,7 +25,7 @@ scoreboard players set #timer tick 0
 scoreboard objectives setdisplay sidebar Infos
 
 
-# Home
+# Home module
 scoreboard objectives add homeOpenSetDialog trigger
 scoreboard objectives add homeSetIndex trigger
 scoreboard objectives add homeTpIndex trigger
@@ -37,6 +43,5 @@ scoreboard objectives add homeRenameConfirm trigger
 scoreboard objectives add homeRenamePending dummy
 scoreboard objectives add homeWaitingRename dummy
 
-
-
+# Load message
 tellraw @a [{"text":"[ShibakaPack] ","color":"green"},{"text":"Datapack was loaded successfully!","color":"white"}]
