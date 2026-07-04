@@ -57,11 +57,11 @@ execute if score #homes config matches 1 as @a if score @s homeOpenRenameDialog 
 execute if score #homes config matches 1 as @a if score @s homeOpenRenameDialog matches 1.. run scoreboard players set @s homeOpenRenameDialog 0
 
 execute if score #homes config matches 1 run scoreboard players enable @a homeOpenRenameGive
-execute if score #homes config matches 1 as @a if score @s homeOpenRenameGive matches 1.. run function shibakapack:home/rename_give
-execute if score #homes config matches 1 as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players operation @s homeRenamePending = @s homeOpenRenameGive
-execute if score #homes config matches 1 as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players set @s homeOpenRenameGive 0
+execute as @a if score @s homeOpenRenameGive matches 1.. run function shibakapack:home/rename_give
+execute as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players operation @s homeRenamePending = @s homeOpenRenameGive
+execute as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players set @s homeOpenRenameGive 0
 
 execute if score #homes config matches 1 run scoreboard players enable @a homeRenameConfirm
-execute if score #homes config matches 1 as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run function shibakapack:home/rename
-execute if score #homes config matches 1 as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeRenameConfirm 0
-execute if score #homes config matches 1 as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeWaitingRename 0
+execute as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run function shibakapack:home/rename
+execute as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeRenameConfirm 0
+execute as @a if score @s homeWaitingRename matches 1 if items entity @s weapon.mainhand minecraft:paper[minecraft:custom_data={home_rename:1b}] if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeWaitingRename 0
