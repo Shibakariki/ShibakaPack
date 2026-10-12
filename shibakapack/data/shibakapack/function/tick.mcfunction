@@ -12,29 +12,27 @@ execute if score #deathcounter config matches 1 run scoreboard objectives setdis
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeList 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeOpenSetDialog 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeSetIndex 0
+execute if score #homes config matches 0 as @a run scoreboard players set @s homeRenameIndex 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeDeleteIndex 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeTpIndex 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeTpMain 0
 execute if score #homes config matches 0 as @a run scoreboard players set @s homeSetMain 0
-execute if score #homes config matches 0 as @a run scoreboard players set @s homeOpenRenameDialog 0
-execute if score #homes config matches 0 as @a run scoreboard players set @s homeOpenRenameGive 0
-execute if score #homes config matches 0 as @a run scoreboard players set @s homeRenameConfirm 0
-execute if score #homes config matches 0 as @a run scoreboard players set @s homeWaitingRename 0
+execute if score #homes config matches 0 as @a run scoreboard players set @s homeSetPersonal 0
 
 # Module homes — actif
-execute if score #homes config matches 1 run scoreboard players enable @a listCounter
+execute if score #homes config matches 1 run scoreboard players enable @a listHomeCounter
 
 execute if score #homes config matches 1 run scoreboard players enable @a homeList
 execute if score #homes config matches 1 as @a if score @s homeList matches 1.. run function shibakapack:home/list
 execute if score #homes config matches 1 as @a if score @s homeList matches 1.. run scoreboard players set @s homeList 0
 
-execute if score #homes config matches 1 run scoreboard players enable @a homeOpenSetDialog
-execute if score #homes config matches 1 as @a if score @s homeOpenSetDialog matches 1.. run function shibakapack:home/open_set_dialog
-execute if score #homes config matches 1 as @a if score @s homeOpenSetDialog matches 1.. run scoreboard players set @s homeOpenSetDialog 0
-
 execute if score #homes config matches 1 run scoreboard players enable @a homeSetIndex
 execute if score #homes config matches 1 as @a if score @s homeSetIndex matches 1.. run function shibakapack:home/set
 execute if score #homes config matches 1 as @a if score @s homeSetIndex matches 1.. run scoreboard players set @s homeSetIndex 0
+
+execute if score #homes config matches 1 run scoreboard players enable @a homeRenameIndex
+execute if score #homes config matches 1 as @a if score @s homeRenameIndex matches 1.. run function shibakapack:home/rename
+execute if score #homes config matches 1 as @a if score @s homeRenameIndex matches 1.. run scoreboard players set @s homeRenameIndex 0
 
 execute if score #homes config matches 1 run scoreboard players enable @a homeDeleteIndex
 execute if score #homes config matches 1 as @a if score @s homeDeleteIndex matches 1.. run function shibakapack:home/delete
@@ -52,16 +50,6 @@ execute if score #homes config matches 1 run scoreboard players enable @a homeSe
 execute if score #homes config matches 1 as @a if score @s homeSetMain matches 1.. run function shibakapack:home/set_main
 execute if score #homes config matches 1 as @a if score @s homeSetMain matches 1.. run scoreboard players set @s homeSetMain 0
 
-execute if score #homes config matches 1 run scoreboard players enable @a homeOpenRenameDialog
-execute if score #homes config matches 1 as @a if score @s homeOpenRenameDialog matches 1.. run function shibakapack:home/open_rename_dialog
-execute if score #homes config matches 1 as @a if score @s homeOpenRenameDialog matches 1.. run scoreboard players set @s homeOpenRenameDialog 0
-
-execute if score #homes config matches 1 run scoreboard players enable @a homeOpenRenameGive
-execute as @a if score @s homeOpenRenameGive matches 1.. run function shibakapack:home/rename_give
-execute as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players operation @s homeRenamePending = @s homeOpenRenameGive
-execute as @a if score @s homeOpenRenameGive matches 1.. run scoreboard players set @s homeOpenRenameGive 0
-
-execute if score #homes config matches 1 run scoreboard players enable @a homeRenameConfirm
-execute as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run function shibakapack:home/rename
-execute as @a if score @s homeWaitingRename matches 1 if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeRenameConfirm 0
-execute as @a if score @s homeWaitingRename matches 1 if items entity @s weapon.mainhand minecraft:paper[minecraft:custom_data={home_rename:1b}] if score @s homeRenameConfirm matches 1.. run scoreboard players set @s homeWaitingRename 0
+execute if score #homes config matches 1 run scoreboard players enable @a homeSetPersonal
+execute if score #homes config matches 1 as @a if score @s homeSetPersonal matches 1.. run function shibakapack:home/set_personal
+execute if score #homes config matches 1 as @a if score @s homeSetPersonal matches 1.. run scoreboard players set @s homeSetPersonal 0

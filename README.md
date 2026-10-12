@@ -18,10 +18,10 @@ ShibakaPack is a datapack designed for Minecraft Java Edition servers. It provid
 - **5 personal home slots** (easily extendable)
 - **Global home** shared by all players (settable by OPs)
 - Saves both **position** and **look direction**
-- **Rename** homes using an anvil
-- **Delete** individual homes
-- Interface via **clickable book** and native Minecraft **dialogs**
-- Home list displayed in chat with clickable teleport buttons
+- **Rename** homes using [✎] in list of homes
+- **Delete** individual homes using [-] in list of homes
+- Interface via **clickable book**
+- Home list displayed in chat with clickable teleport/rename/delete buttons
 
 ### ⚙️ Configuration
 Both modules can be toggled on or off in real time with a simple scoreboard command — no server restart or datapack reload required.
@@ -77,20 +77,15 @@ Use the [**Discussions**](../../discussions) tab for any questions or general co
 #### Using the Book
 The book contains all action buttons:
 - **[Go to global home]** — teleports to the global home (if set)
-- **[Create main home]** *(OP only)* — [+] symbol sets the global home to your current position
+- **[Create global home]** *(OP only)* — [+] symbol sets the global home to your current position
 - **[Home list]** — displays your homes in chat with one-click teleportation
-- **[Create a home]** — 
-[+] symbol opens a dialog to choose a slot
-- **[Rename a home]** — select a slot, rename the paper received on an anvil, then click **[Confirm]** in chat
 
 #### Extending the Number of Home Slots
 1. Change the value in `load.mcfunction`:
 ```mcfunction
-scoreboard players set #max_slot listCounter 10
+scoreboard players set #max_slot listHomeCounter 10
 ```
-2. Add the corresponding options in `data/shibakapack/dialog/set_dialog.json`
-3. Add the matching entries in `data/shibakapack/dialog/rename_dialog.json`
-4. Reload with `/reload`
+2. Reload with `/reload`
 
 #### Configuration Commands *(OP only)*
 
@@ -101,4 +96,3 @@ scoreboard players set #max_slot listCounter 10
 
 ### Compatibility
 - Minecraft Java Edition **1.21.5+** (Created for 1.26.2)
-- Requires **dialogs** (enabled by default in 1.21.5+)

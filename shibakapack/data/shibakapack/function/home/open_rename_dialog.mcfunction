@@ -1,1 +1,0 @@
-dialog show @s shibakapack:home/rename

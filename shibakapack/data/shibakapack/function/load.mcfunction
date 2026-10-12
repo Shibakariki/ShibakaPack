@@ -29,19 +29,15 @@ scoreboard objectives setdisplay sidebar Infos
 scoreboard objectives add homeOpenSetDialog trigger
 scoreboard objectives add homeSetIndex trigger
 scoreboard objectives add homeTpIndex trigger
+scoreboard objectives add homeRenameIndex trigger
 scoreboard objectives add homeDeleteIndex trigger
 scoreboard objectives add homeSetMain trigger
+scoreboard objectives add homeSetPersonal trigger
 scoreboard objectives add homeTpMain trigger
 scoreboard objectives add homeList trigger
-scoreboard objectives add listCounter dummy
+scoreboard objectives add listHomeCounter dummy
 # Change score to change the max slot number
-scoreboard players set #max_slot listCounter 5 
-
-scoreboard objectives add homeOpenRenameDialog trigger
-scoreboard objectives add homeOpenRenameGive trigger
-scoreboard objectives add homeRenameConfirm trigger
-scoreboard objectives add homeRenamePending dummy
-scoreboard objectives add homeWaitingRename dummy
+scoreboard players set #max_slot listHomeCounter 5 
 
 # Load message
 tellraw @a [{"text":"[ShibakaPack] ","color":"green"},{"text":"Datapack was loaded successfully!","color":"white"}]
